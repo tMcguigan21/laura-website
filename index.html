@@ -1,0 +1,115 @@
+<HTML>
+
+<head>
+	
+	<link rel="stylesheet" href="CSS/nav.css">	
+	<link rel="stylesheet" href="CSS/Formatting.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+	
+	<title>Home</title>
+
+</head>
+
+<body>
+
+<script>
+
+$(document).ready(function() {
+    $("#navToggle a").click(function(e){
+        e.preventDefault();
+        
+        $("header > nav").slideToggle();
+        $("#logo").toggleClass("menuUp menuDown");
+    });
+    
+    $(window).resize(function() {
+        if($( window ).width() >= "600") {
+            $("header > nav").css("display", "block");
+            
+            if($("#logo").attr('class') == "menuDown") {
+                $("#logo").toggleClass("menuUp menuDown");
+            }
+        }
+        else {
+            $("header > nav").css("display", "none");
+        }
+    });
+    
+    $("header > nav > ul > li > a").click(function(e) {
+        if($( window ).width() <= "600") {
+            if($(this).siblings().size() > 0 ) {
+			    e.preventDefault();
+                $(this).siblings().slideToggle("fast")
+                $(this).children(".toggle").html($(this).children(".toggle").html() == 'close' ? 'expand' : 'close');
+            }
+        }
+    });
+});
+
+</script>
+
+<!-- Navigation and header bar container -->
+<header>
+	<div id="logo" class="menuUp">
+        <h3>Laura's Dog Services</h3>
+        <div id="navToggle"><a href="#">Menu</a></div>
+    </div>
+    <nav>
+		<ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/About.html">About Us</a></li>
+            <li>
+				<a href="#">Gallery<span class="toggle">Expand</span><span class="caret"></span></a>
+					<nav>
+                    <ul>
+                       <li><a href="/Grooming.html">Grooming</a></li>
+                        <li><a href="/Walking.html">Walking</a></li>
+                        <li><a href="/Boarding.html">Daycare/Boarding</a></li>
+					</nav>
+			</li>
+            <li><a href="/Services.html">Services</a></li>
+            <li><a href="/Contact.html">Contact Us</a></li>
+        </ul>
+	</nav>
+</header>
+
+<!-- Section -->
+<div class="wrapper">
+	<div id="wrapper2">
+	
+		<br>
+		<h1>Welcome</h1>
+		<br>
+		<p align="left">Laura&rsquo;s Dog Services is a professional Grooming, Walking and Boarding service covers the following areas in Essex:-
+		<br><br>
+		Witham, Braintree, Maldon, Danbury, Billericay, Stock and the surrounding areas.
+
+		<br><br>
+		The service provides a thorough and efficient dog grooming service to customers outside of their own homes for the 
+		ultimate convenience. 
+		<br><br>
+		My home offers customer&rsquo;s dogs to experience an enjoyable and relaxed environment, like as 
+		if they were at home while also having a dedicated room purely for Dog grooming which is a converted spare room, 
+		with all the facilities for all types of grooming. 
+		<br><br>Laura&rsquo;s Dog Services has an experienced groomer living on-site, offering a specialised service, including time and patience for your pets needs while promoting the very best care during their treatment and stay.
+		<br><br>
+		If you require anymore information, please do no hestiate to contact me with the details on the "Contact Us" Page.
+	
+		</p>
+</div>
+<br>
+		<div class="img">
+			<img src="Images/HomeIMG1.jpg" alt="Fjords" width="300" height="200">
+
+		</div>
+		
+		<div class="img">
+			<img src="Images/Compressed/Background2-min.jpg" alt="Fjords" width="300" height="200">
+		</div>
+		
+	
+</div>
+	
+</body>
+</html>

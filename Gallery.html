@@ -1,0 +1,114 @@
+<HTML>
+
+<head>
+	
+	<link rel="stylesheet" href="CSS/nav.css">	
+	<link rel="stylesheet" href="CSS/Formatting.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+
+
+	<title>Gallery</title>
+
+</head>
+
+<body>
+
+<script>
+
+$(document).ready(function() {
+    $("#navToggle a").click(function(e){
+        e.preventDefault();
+        
+        $("header > nav").slideToggle();
+        $("#logo").toggleClass("menuUp menuDown");
+    });
+    
+    $(window).resize(function() {
+        if($( window ).width() >= "600") {
+            $("header > nav").css("display", "block");
+            
+            if($("#logo").attr('class') == "menuDown") {
+                $("#logo").toggleClass("menuUp menuDown");
+            }
+        }
+        else {
+            $("header > nav").css("display", "none");
+        }
+    });
+    
+    $("header > nav > ul > li > a").click(function(e) {
+        if($( window ).width() <= "600") {
+            if($(this).siblings().size() > 0 ) {
+			    e.preventDefault();
+                $(this).siblings().slideToggle("fast")
+                $(this).children(".toggle").html($(this).children(".toggle").html() == 'close' ? 'expand' : 'close');
+            }
+        }
+    });
+});
+
+</script>
+
+
+<!-- Navigation and header bar container -->
+<header>
+	<div id="logo" class="menuUp">
+        <h3>Laura's Dog Services</h3>
+        <div id="navToggle"><a href="#">Menu</a></div>
+    </div>
+    <nav>
+		<ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/About.html">About Us</a></li>
+            <li>
+				<a href="#">Gallery<span class="toggle">Expand</span><span class="caret"></span></a>
+					<nav>
+                    <ul>
+                       <li><a href="/Grooming.html">Grooming</a></li>
+                        <li><a href="/Walking.html">Walking</a></li>
+                        <li><a href="/Boarding.html">Daycare/Boarding</a></li>
+					</nav>
+			</li>
+            <li><a href="/Services.html">Services</a></li>
+            <li><a href="/Contact.html">Contact Us</a></li>
+        </ul>
+	</nav>
+</header>
+
+<!-- Section -->
+
+<div class="wrapper">	
+
+	<div id="wrapper2">
+		<br>	
+		
+		<h1>Gallery</h1>
+		<br>
+		
+	<div class="img2">
+	<a target="_blank" href="Images/Compressed/Background3-min.jpg">
+	<img src="Images/Compressed/Background3-min.jpg" alt="Fjords" width="300" height="200">
+	</a>
+	<div class="desc">Grooming</div>
+	</div>
+
+	<div class="img2">
+	<a target="_blank" href="Images/Compressed/Background2-min.jpg">
+		<img src="Images/Compressed/Background2-min.jpg" alt="Fjords" width="300" height="200">
+	</a>
+	<div class="desc">Walking</div>
+	</div>
+
+	<div class="img2">
+	<a target="_blank" href="Images/Compressed/Background-min.jpg">
+		<img src="Images/Compressed/Background-min.jpg" alt="Fjords" width="300" height="200">
+	</a>
+	<div class="desc">Daycare/Boarding</div>
+	</div>
+	
+	</div>	
+</div>
+
+</body>
+</html>

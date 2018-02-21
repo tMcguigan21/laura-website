@@ -1,0 +1,115 @@
+<HTML>
+
+<head>
+	
+	<link rel="stylesheet" href="CSS/nav.css">	
+	<link rel="stylesheet" href="CSS/Formatting.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+
+	<title>About Us</title>
+
+</head>
+
+<body>
+
+<script>
+
+$(document).ready(function() {
+    $("#navToggle a").click(function(e){
+        e.preventDefault();
+        
+        $("header > nav").slideToggle();
+        $("#logo").toggleClass("menuUp menuDown");
+    });
+    
+    $(window).resize(function() {
+        if($( window ).width() >= "600") {
+            $("header > nav").css("display", "block");
+            
+            if($("#logo").attr('class') == "menuDown") {
+                $("#logo").toggleClass("menuUp menuDown");
+            }
+        }
+        else {
+            $("header > nav").css("display", "none");
+        }
+    });
+    
+    $("header > nav > ul > li > a").click(function(e) {
+        if($( window ).width() <= "600") {
+            if($(this).siblings().size() > 0 ) {
+			    e.preventDefault();
+                $(this).siblings().slideToggle("fast")
+                $(this).children(".toggle").html($(this).children(".toggle").html() == 'close' ? 'expand' : 'close');
+            }
+        }
+    });
+});
+
+</script>
+
+
+<!-- Navigation and header bar container -->
+<header>
+	<div id="logo" class="menuUp">
+        <h3>Laura's Dog Services</h3>
+        <div id="navToggle"><a href="#">Menu</a></div>
+    </div>
+    <nav>
+		<ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/About.html">About Us</a></li>
+            <li>
+				<a href="#">Gallery<span class="toggle">Expand</span><span class="caret"></span></a>
+					<nav>
+						<ul>
+							<li><a href="/Grooming.html">Grooming</a></li>
+							<li><a href="/Walking.html">Walking</a></li>
+							<li><a href="/Boarding.html">Daycare/Boarding</a></li>
+					</nav>
+			</li>
+				<li><a href="/Services.html">Services</a></li>
+				<li><a href="/Contact.html">Contact Us</a></li>
+						</ul>
+	</nav>
+</header>
+
+<!-- Section -->
+
+<div class="wrapper">	
+	<div id="wrapper2">
+	<br>
+		<h1>About Us</h1>
+		<br><br>
+		
+		<p>Hi welcome to Lauras Dog services, Firstly I would like to introduce a little about myself.
+		<br>I'm Laura and I am 28 years old. I currently have my own dog, she is a Lurcher cross. (See the picture of her below) 
+		<br>She is a rescue dog, and is very energetic and full of life.
+		<br>
+		<br>She has had no problems integrating herself into my business, and has quickly become friends with
+		<br>any dog that I have looked after. I do limit the amount of dogs that I take on within any given day, 
+		<br>just so that your dog can receive the same amount of attention as if he/she were at home.
+		<br>
+		<br>I am a self-employed Home-based Dog groomer, so you can rest assure that any service provided 
+		<br>is all monitored and cared for by myself within a friendly home environment.
+		<br>
+		<br>I have been a qualified dog groomer for over 5 years, with certification from the City & Guild standard 
+		<br>at Level 2 and now 3, I have also obtained a Licence from the Chelmsford county council to be allowed to board,
+		<br>as well as Dog first aid and Level one Dog training from Writtle college.
+		</p>
+	
+	<br>
+
+	<center>
+	<img src="Images/Honey.jpg" alt="My Dog Honey" width="500" height="350">
+	</a>
+	</center>
+	
+	<br>
+	</div>
+	
+</div>
+	
+</body>
+</html>

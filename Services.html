@@ -1,0 +1,156 @@
+<HTML>
+
+<head>
+	
+	<link rel="stylesheet" href="CSS/nav.css">	
+	<link rel="stylesheet" href="CSS/Formatting.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width, user-scalable=yes">
+
+	<title>Services</title>
+
+</head>
+
+<body>
+
+<script>
+
+$(document).ready(function() {
+    $("#navToggle a").click(function(e){
+        e.preventDefault();
+        
+        $("header > nav").slideToggle();
+        $("#logo").toggleClass("menuUp menuDown");
+    });
+    
+    $(window).resize(function() {
+        if($( window ).width() >= "600") {
+            $("header > nav").css("display", "block");
+            
+            if($("#logo").attr('class') == "menuDown") {
+                $("#logo").toggleClass("menuUp menuDown");
+            }
+        }
+        else {
+            $("header > nav").css("display", "none");
+        }
+    });
+    
+    $("header > nav > ul > li > a").click(function(e) {
+        if($( window ).width() <= "600") {
+            if($(this).siblings().size() > 0 ) {
+			    e.preventDefault();
+                $(this).siblings().slideToggle("fast")
+                $(this).children(".toggle").html($(this).children(".toggle").html() == 'close' ? 'expand' : 'close');
+            }
+        }
+    });
+});
+
+</script>
+
+
+<!-- Navigation and header bar container -->
+<header>
+	<div id="logo" class="menuUp">
+        <h3>Laura's Dog Services</h3>
+        <div id="navToggle"><a href="#">Menu</a></div>
+    </div>
+    <nav>
+		<ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/About.html">About Us</a></li>
+            <li>
+				<a href="#">Gallery<span class="toggle">Expand</span><span class="caret"></span></a>
+					<nav>
+                    <ul>
+                        <li><a href="/Grooming.html">Grooming</a></li>
+                        <li><a href="/Walking.html">Walking</a></li>
+                        <li><a href="/Boarding.html">Daycare/Boarding</a></li>
+					</nav>
+			</li>
+            <li><a href="/Services.html">Services</a></li>
+            <li><a href="/Contact.html">Contact Us</a></li>
+        </ul>
+	</nav>
+</header>
+
+<!-- Section -->
+
+<div class="wrapper">	
+
+		<div id="wrapper2">
+		<br>
+				<h1>Services</h1>
+				<br><br>
+				
+			<div id="left">
+			
+				<h2>Grooming:-</h2>
+				<br>
+				<p>Small breed (yorkshire Terrier, Chihuahua, west highland terrier) - &pound17-25
+				
+				<br><br>Medium breed (bulldog chow chow, labradore, bearded collie, 
+				standard poodle. cocker spnaiel, springer spnaiel) - &pound20 - &pound30
+				<br>
+				<br>Large breed (German Shepherd, Bernese mountain dog, collie, 
+				mastiff Giant poodle) - &pound30 - &pound55
+				<br>
+				<br>
+				<u>Every dog grooming session will receieve the following:-</u>
+				<br>
+				<br>Bath and blow dry - Consisting of two washes, products designed 
+				for your dogs coat. Then followed by a lovely warm blow dry afterwards.
+				<br>
+				<br>Full Groom -  This offers everything your dog needs to look good 
+				and feel good.
+				<br><br>
+				This includes dead-hair removal, a trim between 
+				the pads, nail clipping, ear cleaning and plucking,two shampoos 
+				(Specified as above), a warm blow dry, custom or breed specific 
+				coat styling, and finished off with a lovely fragrance spray
+				<br><br><br>
+				</p>
+				
+			</div>
+				
+			<div id="right">
+			
+			<h2>Dog day care/Boarding:-</h2>
+			<br>
+			<p>4 Hours - &pound10
+			<br><br>
+			8 Hours - &pound16
+			<br><br>
+			Overnight Stay - &pound20 (Per night)
+			<br><br>
+			All dogs that remain in my care recieve the following as standard:-
+			<br><br>
+			They can find the comforts of home from bedding to crates.
+			<br>
+			Every dog that is looked after will also have fresh water throughout the day.
+			<br><br>A fenced off garden for them to play around in, accompanied by a 
+			box full of toys for them to choose from through the day.
+			<br><br>I do make the effort to keep to their daily routine, so that it does not disrupt their lifestyle.
+			</p>
+			<br>
+			
+			</div>
+			
+			<div class="rBelow">
+			<br>
+			<h2>Dog walking:-</h2>
+			<br>
+			<p>30 Minutes - &pound4
+			<br><br>
+			1 Hour - &pound8
+			</p>
+			<br>
+			</div>
+		
+		</div>
+			
+</div>
+
+</body>
+</html>
